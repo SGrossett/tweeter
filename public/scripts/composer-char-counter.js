@@ -5,6 +5,7 @@ $(document).ready(function() {
     let length = maxLength - tweetLength;
 
     $('.counter').text(length);
+    length < 0 ? $('.counter').css('color', '#f00') : $('.counter').css('color', '#545149');
   });
 });
 
