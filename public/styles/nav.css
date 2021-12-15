@@ -24,7 +24,7 @@ nav {
   flex-direction: column;
 }
 
-i {
+#write-new > i {
   align-self: center;
   color: #f00;
   padding: 0.3em;
