@@ -5,7 +5,6 @@
  */
 
 $(document).ready(function() {
-
   const createTweetElement = function(tweetObj) {
     const $tweet = $(
       `<article class="tweet">
@@ -24,7 +23,7 @@ $(document).ready(function() {
           <hr>
         </div>
         <footer>
-          <div><b>${tweetObj.created_at}</b></div>
+          <div><b>${timeago.format(tweetObj.created_at)}</b></div>
           <div>
             <button class="icon flag"><i class="fas fa-flag"></i></button>
             <button class="icon retweet"><i class="fas fa-retweet"></i></button>
@@ -33,9 +32,17 @@ $(document).ready(function() {
         </footer>
       </article>`);
     return $tweet;
-  }
+  };
 
-  // Driver code 
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    for (let tweet of tweets) {
+      const $tweetValue = createTweetElement(tweet);
+      $("#tweet-container").prepend($tweetValue);
+    }
+  };
+
   const tweetData = {
     "user": {
       "name": "Newton",
@@ -47,11 +54,5 @@ $(document).ready(function() {
       },
     "created_at": 1461116232227
   }
-
-  const $tweet = createTweetElement(tweetData);
-
-  console.log($tweet); // to see what it looks like
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.sure it's got all the right elements, classes, etc.
-
+  
 });
-
