@@ -44,12 +44,27 @@ $(document).ready(function() {
     }
   };
 
+
+  // $('.new-tweet textarea').on('input', function() {
+  //   const tweetLength = $(this).val().length;
+  // });
+
   // Event listener for submit and prevent its default behaviour
   // Serializer the form data and send it to the server as a query string
   $("form").on("submit", function(event) {
     event.preventDefault();
 
     const $formData = $(this).serialize();
+    const tweetText = $(this).children('textarea').val();
+    
+    if (!tweetText) {
+      alert('Tweets must be at least one character long');
+      return;
+    } else if (tweetText.length > 140) {
+      alert('Tweet capacity reached');
+      return;
+    } 
+    
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -57,6 +72,7 @@ $(document).ready(function() {
       success: () => console.log('Success!'),
       error: (err) => console.log(`Error: ${err}`)
     });
+    
   });
 
   // Adds tweet to the DOM
@@ -69,4 +85,5 @@ $(document).ready(function() {
     });
   };
   loadTweets();
+
 });
