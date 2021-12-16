@@ -44,18 +44,6 @@ $(document).ready(function() {
     }
   };
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  };
-
   // Event listener for submit and prevent its default behaviour
   // Serializer the form data and send it to the server as a query string
   $("form").on("submit", function(event) {
