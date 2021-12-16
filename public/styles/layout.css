@@ -30,22 +30,44 @@ body {
   position: relative;
   width: 90%;
   margin: auto;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 #tweet-container {
   margin-top: 15px;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 article {
-  border: 3px solid green;
+  border: 3px solid #657786;
   padding: 0.5em; 
   margin: 1em 0em;
 }
 
 article > header {
   display: flex;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+
+.profile, .handle {
+  display: flex;
+}
+
+.profile h4 {
+  display: flex;
+  margin: 0.2em;
+}
+
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 45%;
+  padding: em;
+  padding: 0.5em;
+  background: #fff;
+
 }
 
 article > div p {
@@ -59,11 +81,12 @@ footer {
   font-size: 0.6em;
 
 }
-.icons button {
-  border: none;
-  padding: 0.2em;
-}
 
 hr {
   border: 1px solid;
+}
+
+.icons button {
+  border: none;
+  padding: 0.2em;
 }
