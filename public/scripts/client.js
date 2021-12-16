@@ -71,4 +71,14 @@ $(document).ready(function() {
     });
   });
 
+  // Adds tweet to the DOM
+  const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: (tweets) => renderTweets(tweets),
+      error: (err) => console.log(`Error: ${err}`)
+    });
+  };
+  loadTweets();
 });
