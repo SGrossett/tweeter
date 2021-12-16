@@ -34,7 +34,7 @@ body {
 }
 
 #tweet-container {
-  margin-top: 15px;
+  margin-top: 3em;
   /* border: 3px solid blue; */
 }
 
@@ -57,6 +57,10 @@ article > header {
 .profile h4 {
   display: flex;
   margin: 0.2em;
+}
+
+.profile h5 {
+  color: #AAB8D2;
 }
 
 .profile-pic {
