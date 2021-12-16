@@ -30,4 +30,31 @@ body {
   position: relative;
   width: 90%;
   margin: auto;
+  border: 2px solid red;
+}
+
+#tweet-container {
+  margin-top: 15px;
+  border: 3px solid blue;
+}
+
+article {
+  border: 3px solid green;
+  padding: 0.5em; 
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3em 1em;
+  font-size: 0.6em;
+
+}
+.icons button {
+  border: none;
+  padding: 0.2em;
+}
+
+hr {
+  border: 1px solid;
 }
