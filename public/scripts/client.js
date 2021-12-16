@@ -34,12 +34,13 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // Loops through tweets
+  // Calls createTweetElement for each tweet
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
     for (let tweet of tweets) {
-      const $tweetValue = createTweetElement(tweet);
-      $("#tweet-container").prepend($tweetValue);
+      const $tweet = createTweetElement(tweet);
+      const $tweetContainer = $("#tweet-container");
+      $tweetContainer.prepend($tweet);
     }
   };
 
@@ -53,6 +54,21 @@ $(document).ready(function() {
         "text": "If I have seen further it is by standing on the shoulders of giants"
       },
     "created_at": 1461116232227
-  }
-  
+  };
+
+  // Event listener for submit and prevent its default behaviour
+  // Serializer the form data and send it to the server as a query string
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+
+    const $formData = $(this).serialize();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $formData,
+      success: () => console.log('Success!'),
+      error: (err) => console.log(`Error: ${err}`)
+    });
+  });
+
 });
