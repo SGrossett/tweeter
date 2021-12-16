@@ -19,7 +19,7 @@ form > div {
   font-family: 'Bungee', sans-serif;
 }
 
-form > button {
+form > div button {
   background-color: #4056A1;
   color: #fff;
   border: none;
