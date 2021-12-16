@@ -69,8 +69,8 @@ $(document).ready(function() {
       url: '/tweets',
       method: 'POST',
       data: $formData,
-      success: () => console.log('Success!'),
-      error: (err) => console.log(`Error: ${err}`)
+      success: () => loadTweets(),
+     error: (err) => console.log(`Error: ${err}`)
     });
     
   });
