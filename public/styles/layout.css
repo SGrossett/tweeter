@@ -116,3 +116,7 @@ hr {
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--hover); }
 }
+
+article:hover {
+  box-shadow: 13px 13px #cfdae2;
+}
