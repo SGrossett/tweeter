@@ -86,7 +86,33 @@ hr {
   border: 1px solid;
 }
 
-.icons button {
+.icon {
   border: none;
+  border-radius: 50%;
   padding: 0.2em;
+}
+
+.flag:hover, .flag:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(62, 174, 244, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(62, 174, 244);
+  /* transform: translateY(-5px); */
+}
+
+.retweet:hover, .retweet:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(68, 187, 68, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(68, 187, 68);
+  /* transform: translateY(-5px); */
+}
+
+.heart:hover, .heart:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(237, 94, 166, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(237, 94, 166);
+  /* transform: translateY(-5px); */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
 }
