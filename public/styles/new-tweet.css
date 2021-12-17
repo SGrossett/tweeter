@@ -9,8 +9,8 @@ textarea {
   border-bottom: 5px solid;
   margin: 0.6em 0em;
   background: transparent;
-  border-color: #657786;
-  color: #545149;
+  background-color: #E1E8ED;
+  border-color: #000;
 }
 
 form > div {
@@ -20,7 +20,7 @@ form > div {
 }
 
 form > div button {
-  background-color: #4056A1;
+  background-color: #2e9bdf;
   color: #fff;
   border: none;
   border-radius: 0.1em;
