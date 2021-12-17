@@ -1,10 +1,9 @@
 #tweet-container {
   margin-top: 2em;
-  /* border: 3px solid blue; */
 }
 
 article {
-  border: 3px solid #657786;
+  border: 3px solid #000;
   padding: 0.5em; 
   margin: 1em 0em;
 }
@@ -12,7 +11,6 @@ article {
 article > header {
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid red; */
 }
 
 .profile, .handle {
@@ -36,7 +34,6 @@ article > header {
   padding: em;
   padding: 0.5em;
   background: #fff;
-
 }
 
 article > div p {
@@ -49,7 +46,6 @@ footer {
   justify-content: space-between;
   margin: 0.3em 1em;
   font-size: 0.6em;
-
 }
 
 hr {
@@ -66,21 +62,18 @@ hr {
   animation: pulse 0.3s;
   background-color: rgb(62, 174, 244, 0.7);
   box-shadow: 0 0 0.5em 0.2em rgb(62, 174, 244);
-  /* transform: translateY(-5px); */
 }
 
 .retweet:hover, .retweet:focus {
   animation: pulse 0.3s;
   background-color: rgb(68, 187, 68, 0.7);
   box-shadow: 0 0 0.5em 0.2em rgb(68, 187, 68);
-  /* transform: translateY(-5px); */
 }
 
 .heart:hover, .heart:focus {
   animation: pulse 0.3s;
   background-color: rgb(237, 94, 166, 0.7);
   box-shadow: 0 0 0.5em 0.2em rgb(237, 94, 166);
-  /* transform: translateY(-5px); */
 }
 
 @keyframes pulse {
