@@ -6,73 +6,68 @@
 
 $(document).ready(function() {
 
-  $(`.display-error`).hide()
+  $(`.display-error`).hide();
   
 
   // Function used to prevent Cross-Site Scripting
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-// Takes in an object with user & tweet information
-// Generates HTML markup to display tweet
-const createTweetElement = function(tweetObj) {
-  const $tweet = $(
-    `<article class="tweet">
-      <header>
-        <div class="profile">
-          <img src="${tweetObj.user.avatars}" alt="${tweetObj.user.name}-profile-pic" class="profile-pic">
-          <h4>${tweetObj.user.name}</h4>
-        </div>
-        
-        <div class="handle">
-          <h5>${tweetObj.user.handle}</h5>
-        </div>
-      </header>
-      <div>
-        <p>${escape(tweetObj.content.text)}</p>
-        <hr>
-      </div>
-      <footer>
-        <div><b>${timeago.format(tweetObj.created_at)}</b></div>
+  // Takes in an object with user & tweet information
+  // Generates HTML markup to display tweet
+  const createTweetElement = function(tweetObj) {
+    const $tweet = $(
+      `<article class="tweet">
+        <header>
+          <div class="profile">
+            <img src="${tweetObj.user.avatars}" alt="${tweetObj.user.name}-profile-pic" class="profile-pic">
+            <h4>${tweetObj.user.name}</h4>
+          </div>
+          
+          <div class="handle">
+            <h5>${tweetObj.user.handle}</h5>
+          </div>
+        </header>
         <div>
-          <button class="icon flag"><i class="fas fa-flag"></i></button>
-          <button class="icon retweet"><i class="fas fa-retweet"></i></button>
-          <button class="icon heart"><i class="fas fa-heart"></i></button>
+          <p>${escape(tweetObj.content.text)}</p>
+          <hr>
         </div>
-      </footer>
-    </article>`);
+        <footer>
+          <div><b>${timeago.format(tweetObj.created_at)}</b></div>
+          <div>
+            <button class="icon flag"><i class="fas fa-flag"></i></button>
+            <button class="icon retweet"><i class="fas fa-retweet"></i></button>
+            <button class="icon heart"><i class="fas fa-heart"></i></button>
+          </div>
+        </footer>
+      </article>`);
   return $tweet;
 };
 
-// Loops through tweets
-// Calls createTweetElement for each tweet
-const renderTweets = function(tweets) {
-  for (let tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    const $tweetContainer = $("#tweet-container");
-    $tweetContainer.prepend($tweet);
-  }
-};
+  // Loops through tweets
+  // Calls createTweetElement for each tweet
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      const $tweetContainer = $("#tweet-container");
+      $tweetContainer.prepend($tweet);
+    }
+  };
 
+  // Adds tweet to the DOM
+  const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: (tweets) => renderTweets(tweets),
+      error: (err) => console.log(`Error: ${err}`)
+    });
+  };
 
-// $('.new-tweet textarea').on('input', function() {
-//   const tweetLength = $(this).val().length;
-// });
-
-// Adds tweet to the DOM
-const loadTweets = () => {
-  $.ajax({
-    url: '/tweets',
-    method: 'GET',
-    success: (tweets) => renderTweets(tweets),
-    error: (err) => console.log(`Error: ${err}`)
-  });
-};
-
-loadTweets();
+  loadTweets();
 
   // Event listener for submit and prevent its default behaviour
   // Serializer the form data and send it to the server as a query string
@@ -87,7 +82,7 @@ loadTweets();
       //$(`.display-error`).slideDown();
       setTimeout(() => {
         $(`.display-error`).slideDown();
-      }, 400)
+      }, 400);
     } 
    
     if (tweetText.length >= 140) {
@@ -100,14 +95,11 @@ loadTweets();
       method: 'POST',
       data: $formData,
       success: () => {
-        $(`.display-error`).slideUp()
-        loadTweets()
+        $(`.display-error`).slideUp();
+        loadTweets();
       },
       error: (err) => console.log(`Error: ${err}`)
     });
-    
-    
-  });  
-
+  });
 });
 
