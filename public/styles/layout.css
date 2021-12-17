@@ -15,8 +15,9 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #000;
+  /* background-color: #f4f1ec; */
+  background-color: #f9f9f9;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   height: 200vh;
@@ -47,4 +48,49 @@ body {
   font-size: 2em;
   color: #f00;
   margin: auto 0.3em;
+}
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body > header {
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
+    background-color: #2e9bdf;
+    margin-top: 1.5em;
+  } 
+
+  .new-tweet > h2 {
+    visibility: hidden;
+    font-size: 1.5em;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  body > header {
+    background-image: none;
+    margin-top: 5em;
+    width: 33.3%;
+    float: left;
+  }
+
+  .header-img {
+    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
+    background-color: #000;
+  }
+
+  .new-tweet > h2 {
+    visibility: hidden;
+  }
+
+  .new-tweet {
+    margin-top: 14vh;
+    width: 67.3%;
+    float: right;
+  }
+
+  #tweet-container {
+    width: 67.3%;
+    float: right;
+  }
 }
