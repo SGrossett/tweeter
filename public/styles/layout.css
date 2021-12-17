@@ -33,94 +33,18 @@ body {
   /* border: 2px solid red; */
 }
 
-#tweet-container {
-  margin-top: 3em;
-  /* border: 3px solid blue; */
-}
-
-article {
-  border: 3px solid #657786;
-  padding: 0.5em; 
-  margin: 1em 0em;
-}
-
-article > header {
+.display-error {
   display: flex;
+  border: 2px solid #f00;
   justify-content: space-between;
-  /* border: 2px solid red; */
+  color: #D8000C;
+  background-color: #FFBABB;
+  max-height: 3em;
+  margin: 1.6em;
 }
 
-.profile, .handle {
-  display: flex;
-}
-
-.profile h4 {
-  display: flex;
-  margin: 0.2em;
-}
-
-.profile h5 {
-  color: #AAB8D2;
-}
-
-.profile-pic {
-  width: 70px;
-  height: 70px;
-  border: none;
-  border-radius: 45%;
-  padding: em;
-  padding: 0.5em;
-  background: #fff;
-
-}
-
-article > div p {
-  margin: 0.3em 0.5em;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.3em 1em;
-  font-size: 0.6em;
-
-}
-
-hr {
-  border: 1px solid;
-}
-
-.icon {
-  border: none;
-  border-radius: 50%;
-  padding: 0.2em;
-}
-
-.flag:hover, .flag:focus {
-  animation: pulse 0.3s;
-  background-color: rgb(62, 174, 244, 0.7);
-  box-shadow: 0 0 0.5em 0.2em rgb(62, 174, 244);
-  /* transform: translateY(-5px); */
-}
-
-.retweet:hover, .retweet:focus {
-  animation: pulse 0.3s;
-  background-color: rgb(68, 187, 68, 0.7);
-  box-shadow: 0 0 0.5em 0.2em rgb(68, 187, 68);
-  /* transform: translateY(-5px); */
-}
-
-.heart:hover, .heart:focus {
-  animation: pulse 0.3s;
-  background-color: rgb(237, 94, 166, 0.7);
-  box-shadow: 0 0 0.5em 0.2em rgb(237, 94, 166);
-  /* transform: translateY(-5px); */
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--hover); }
-}
-
-article:hover {
-  box-shadow: 13px 13px #cfdae2;
+.display-error > i {
+  font-size: 2em;
+  color: #f00;
+  margin: auto 0.3em;
 }
