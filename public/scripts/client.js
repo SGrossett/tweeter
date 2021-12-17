@@ -5,6 +5,14 @@
  */
 
 $(document).ready(function() {
+
+  // Function used to prevent Cross-Site Scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweetObj) {
     const $tweet = $(
       `<article class="tweet">
@@ -19,7 +27,7 @@ $(document).ready(function() {
           </div>
         </header>
         <div>
-          <p>${tweetObj.content.text}</p>
+          <p>${escape(tweetObj.content.text)}</p>
           <hr>
         </div>
         <footer>
