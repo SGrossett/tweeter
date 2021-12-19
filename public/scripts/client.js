@@ -54,6 +54,7 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
       const $tweetContainer = $("#tweet-container");
       $tweetContainer.prepend($tweet);
+
     }
   };
 
@@ -90,6 +91,7 @@ $(document).ready(function() {
         return $(`.display-error`).slideDown('slow');
     }
 
+    // On submit: hide error, load tweet, clear text area, reset counter
     $.ajax({
       url: '/tweets/',
       method: 'POST',
@@ -98,6 +100,7 @@ $(document).ready(function() {
         $(`.display-error`).slideUp();
         loadTweets();
         $(this).children('textarea').val('');
+        $('.counter').text(140);
       },
       error: (err) => console.log(`Error: ${err}`)
     });
@@ -114,5 +117,11 @@ $(document).ready(function() {
   $('.dark-mode button').click(function() {
     $("i", this).toggleClass("'far fa-moon' 'fas fa-moon'");
   });
+
+  // Focus on textarea when anywhere on the #write-new div is clicked
+  $('#write-new').on('click', function() {
+    $('#tweet-text').focus();
+  });
+
 
 });
