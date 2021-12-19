@@ -101,5 +101,17 @@ $(document).ready(function() {
       error: (err) => console.log(`Error: ${err}`)
     });
   });
-});
 
+  // // Listen for a click on the button
+  // Then toggle (add/remove) the .dark-theme class to the body
+  $('.btn-toggle').on('click', function() {
+    document.body.classList.toggle('dark-theme');
+    $("i", this).toggleClass("far fa-moon fas fa-moon");
+  });
+
+  // Toggle icon for .dark-theme and .light-theme
+  $('.dark-mode button').click(function() {
+    $("i", this).toggleClass("'far fa-moon' 'fas fa-moon'");
+  });
+
+});
