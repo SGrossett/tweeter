@@ -5,6 +5,7 @@ form {
 
 textarea {
   outline: none;
+  border: none;
   border-bottom: 5px solid;
   margin: 0.6em 0em;
   background: transparent;
