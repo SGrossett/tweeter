@@ -17,7 +17,7 @@ html {
 body {
   color: #000;
   /* background-color: #f4f1ec; */
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   height: 200vh;
@@ -53,15 +53,30 @@ body {
 
 /* Tablet Styles */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  nav {
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    background-color: #000;
+  }
+
   body > header {
-    background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
     background-color: #2e9bdf;
-    margin-top: 1.5em;
+    margin-top: 2.5em;
   } 
 
-  .new-tweet > h2 {
-    visibility: hidden;
-    font-size: 1.5em;
+  .header-img {
+    /* background-color: #000; */
+    margin-top: 4em;
+  }
+
+  .header-img > img {
+    width: 25rem;
+    height: 20rem;
+    background-color: rgb(46, 155, 223, 0.98);
+  }
+
+  .new-tweet {
+    margin-top: 3em;
   }
 }
 
@@ -69,22 +84,21 @@ body {
 @media only screen and (min-width: 1024px) {
   body > header {
     background-image: none;
+    background-color: none;
     margin-top: 5em;
     width: 33.3%;
     float: left;
   }
 
-  .header-img {
-    background-image: url(https://www.transparenttextures.com/patterns/asfalt-light.png);
-    background-color: #000;
-  }
-
-  .new-tweet > h2 {
-    visibility: hidden;
-  }
+  .header-img > img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: rgb(46, 155, 223, 0.98);
+}
 
   .new-tweet {
-    margin-top: 14vh;
+    margin-top: 20vh;
     width: 67.3%;
     float: right;
   }
