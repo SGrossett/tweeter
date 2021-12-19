@@ -4,13 +4,11 @@ form {
 }
 
 textarea {
-  border: none;
   outline: none;
   border-bottom: 5px solid;
   margin: 0.6em 0em;
   background: transparent;
   background-color: #E1E8ED;
-  border-color: #000;
 }
 
 form > div {
