@@ -97,6 +97,7 @@ $(document).ready(function() {
       success: () => {
         $(`.display-error`).slideUp();
         loadTweets();
+        $(this).children('textarea').val('');
       },
       error: (err) => console.log(`Error: ${err}`)
     });
