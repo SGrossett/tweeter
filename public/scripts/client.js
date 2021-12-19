@@ -85,8 +85,8 @@ $(document).ready(function() {
       }, 400);
     } 
    
-    if (tweetText.length >= 140) {
-        $('.errorMsg').text('Tweet capacity reached. Shorten that. Thanksss');
+    if (tweetText.length > 140) {
+        $('.errorMsg').text('Tweet capacity reached. Shorten it a bit. Thanksss');
         return $(`.display-error`).slideDown('slow');
     }
 
