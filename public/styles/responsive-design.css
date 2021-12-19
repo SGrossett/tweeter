@@ -31,12 +31,6 @@
 
 /* Tablet Styles */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  
-  nav {
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    background-color: #000;
-  }
-
   body > header {
     background-color: #2e9bdf;
     margin-top: 2.5em;
