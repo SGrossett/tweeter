@@ -4,22 +4,20 @@
 
 article {
   border: 3px solid #000;
-  padding: 0.5em; 
+  box-shadow: 0px 6px 10px rgb(0 0 0 / 50%);
+  padding: 0 0.5em 0.5em; 
   margin: 1em 0em;
+  word-wrap: break-word;
 }
 
 article > header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.5em;
 }
 
-.profile, .handle {
+.profile, .handle, .profile h4{
   display: flex;
-}
-
-.profile h4 {
-  display: flex;
-  margin: 0.2em;
 }
 
 .profile h5 {
@@ -31,9 +29,10 @@ article > header {
   height: 70px;
   border: none;
   border-radius: 45%;
-  padding: em;
   padding: 0.5em;
   background: #fff;
+  display: flex;
+  align-self: center;
 }
 
 article > div p {
@@ -56,6 +55,21 @@ hr {
   border: none;
   border-radius: 50%;
   padding: 0.2em;
+}
+
+.flag {
+  color: #3eaef4;
+  background-color: #fff;
+}
+
+.retweet {
+  color: #44bb44;
+  background-color: #fff;
+}
+
+.heart {
+  color: #ed5ea6;
+  background-color: #fff;
 }
 
 .flag:hover, .flag:focus {
