@@ -115,11 +115,11 @@ $(document).ready(function() {
 
 
   // Checks if the window is at the top. Displays button if not
-  $(window).scroll(function(){
+  $(window).scroll(function() {
 
   // Show button after 200px
   var showAfter = 200;
-  if ( $(this).scrollTop() > showAfter ) { 
+  if ($(this).scrollTop() > showAfter) {
     $('.back-to-top').fadeIn();
   } else {
     $('.back-to-top').fadeOut();

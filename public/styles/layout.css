@@ -49,3 +49,25 @@ body {
   color: #f00;
   margin: auto 0.3em;
 }
+
+.back-to-top {
+  background-color: #2e9bdf;
+  color: #fff;
+  padding: 0.8em 1em; 
+  border-radius: 50%;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-out;
+  display: none;
+  position: fixed; 
+  bottom: 1em; 
+  right: 0.8em; 
+  z-index: 99;
+}
+
+.back-to-top:hover {
+  opacity: 0.5;
+}
+
