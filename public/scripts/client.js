@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function() {
 
   $(`.display-error`).hide();
@@ -16,7 +10,6 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  // Takes in an object with user & tweet information
   // Generates HTML markup to display tweet
   const createTweetElement = function(tweetObj) {
     const $tweet = $(
@@ -47,7 +40,6 @@ $(document).ready(function() {
   return $tweet;
 };
 
-  // Loops through tweets
   // Calls createTweetElement for each tweet
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -70,8 +62,8 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Event listener for submit and prevent its default behaviour
-  // Serializer the form data and send it to the server as a query string
+  // Prevent sumbit default behaviour
+  // Serialize the form data and send it to the server 
   $("form").on("submit", function(event) {
     event.preventDefault();
 
@@ -80,7 +72,6 @@ $(document).ready(function() {
     
     if (!tweetText) {
       $('.errorMsg').text('Tweets must be at least one character long');
-      //$(`.display-error`).slideDown();
       setTimeout(() => {
         $(`.display-error`).slideDown();
       }, 400);
@@ -106,7 +97,6 @@ $(document).ready(function() {
     });
   });
 
-  // // Listen for a click on the button
   // Then toggle (add/remove) the .dark-theme class to the body
   $('.btn-toggle').on('click', function() {
     document.body.classList.toggle('dark-theme');
@@ -124,4 +114,21 @@ $(document).ready(function() {
   });
 
 
+  // Checks if the window is at the top. Displays button if not
+  $(window).scroll(function(){
+
+  // Show button after 200px
+  var showAfter = 200;
+  if ( $(this).scrollTop() > showAfter ) { 
+    $('.back-to-top').fadeIn();
+  } else {
+    $('.back-to-top').fadeOut();
+  }
+ });
+
+  // Click event to scroll to top
+  $('.back-to-top').on('click', function() {
+    $('html, body').animate({scrollTop : 0}, 800);
+    return false;
+  });
 });
