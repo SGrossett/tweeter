@@ -23,6 +23,10 @@
     margin: 0;
   }
 
+  .new-tweet button {
+    padding: 0.2em 0.5em !important;
+  }
+
   .header-img {
     margin-top: 6em !important;
     padding: 0 !important;
