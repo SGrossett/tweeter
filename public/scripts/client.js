@@ -3,7 +3,6 @@ $(document).ready(function() {
   $(`.display-error`).hide();
   
 
-  // Function used to prevent Cross-Site Scripting
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -55,13 +54,24 @@ $(document).ready(function() {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-      success: (tweets) => renderTweets(tweets),
+      success: (tweets) => {
+        $(`#tweet-container`).empty()
+        renderTweets(tweets)
+      },
       error: (err) => console.log(`Error: ${err}`)
     });
   };
 
   loadTweets();
 
+  $('.new-tweet textarea').on('input', function() {
+    const tweetLength = $(this).val().length;
+    
+    if (tweetLength <= 140) {
+      $(`.display-error`).slideUp('slow');
+    }
+  });
+  
   // Prevent sumbit default behaviour
   // Serialize the form data and send it to the server 
   $("form").on("submit", function(event) {
