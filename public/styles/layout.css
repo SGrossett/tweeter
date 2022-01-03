@@ -16,8 +16,6 @@ html {
 
 body {
   color: #000;
-  /* background-color: #f4f1ec; */
-  /* background-color: #f9f9f9; */
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   height: 200vh;
@@ -31,7 +29,6 @@ body {
   position: relative;
   width: 90%;
   margin: auto;
-  /* border: 2px solid red; */
 }
 
 .display-error {
